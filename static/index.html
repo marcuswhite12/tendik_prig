@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Теңдик & Адинай — Свадьба</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+   INVITATION.CSS — Wedding Invitation Styles
+   Теңдик & Адинай
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #f5f0e8;
+  --dark: #1a1a1a;
+  --gold: #c9a96e;
+  --gold-light: #e8d5a3;
+  --text: #3a3a3a;
+  --text-light: #777;
+  --border: #e0d5c5;
+  --white: #fff;
+  --shadow: rgba(0,0,0,0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ============================================
+   PARTICLES
+   ============================================ */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+  background: #1a1510;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.55) 100%);
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  animation: heroFadeIn 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-save-date {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.save-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.9);
+}
+
+.the-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--gold-light);
+}
+
+.date-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.9);
+}
+
+.hero-date-big {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 28px;
+  animation: heroFadeIn 2s 0.3s both;
+}
+
+.hero-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  animation: heroFadeIn 2s 0.6s both;
+}
+
+.name-script {
+  font-family: 'Cormorant Garamond', cursive;
+  font-size: 62px;
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(201,169,110,0.35);
+}
+
+.amp {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--gold-light);
+  display: block;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.scroll-arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bounce 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ============================================
+   SECTIONS BASE
+   ============================================ */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 32px 24px;
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   AUDIO BUTTON
+   ============================================ */
+.audio-section {
+  padding: 24px 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1.5px solid #c0b090;
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.audio-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(201,169,110,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.audio-btn:hover::before,
+.audio-btn.playing::before {
+  transform: translateX(100%);
+}
+
+.audio-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.audio-btn.playing {
+  border-color: var(--gold);
+  color: var(--gold);
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(201,169,110,0.3); }
+  50% { box-shadow: 0 0 20px rgba(201,169,110,0.6); }
+}
+
+/* ============================================
+   CALENDAR
+   ============================================ */
+.calendar-section {
+  padding: 36px 28px 24px;
+  text-align: center;
+}
+
+.month-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+.script-font {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.calendar-grid {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.cal-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 8px;
+}
+
+.cal-header span {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+  padding: 4px 0;
+  letter-spacing: 0.5px;
+}
+
+.cal-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.cal-day.empty {
+  color: transparent;
+}
+
+.cal-day.wedding {
+  background: #1a1a1a;
+  color: white;
+  font-weight: 500;
+}
+
+.cal-day.wedding::after {
+  content: '♥';
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  font-size: 6px;
+  color: var(--gold);
+}
+
+.cal-day.weekend {
+  color: #c0956a;
+}
+
+/* ============================================
+   INVITE TEXT
+   ============================================ */
+.invite-text-section {
+  text-align: center;
+  padding: 32px 32px;
+}
+
+.invite-label {
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.invite-label::before,
+.invite-label::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.invite-text p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--text);
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.invite-sub {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 16px;
+  font-style: italic;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+/* ============================================
+   PHOTO PLACEHOLDERS
+   ============================================ */
+.photo-placeholder {
+  padding: 0;
+}
+
+.photo-box {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, #d4c4a0, #e8d5a3, #c9b890, #d4c4a0);
+  background-size: 400% 400%;
+  animation: shimmerBg 4s ease-in-out infinite;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes shimmerBg {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+
+.photo-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.25) 50%, transparent 60%);
+  animation: sweep 2.5s ease-in-out infinite;
+}
+
+@keyframes sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.photo2 {
+  height: 320px;
+  background: linear-gradient(135deg, #c9b890, #d4c4a0, #e8d5a3, #c9b890);
+  background-size: 400% 400%;
+}
+
+/* ============================================
+   MEDIA SECTION
+   ============================================ */
+.media-section {
+  text-align: center;
+  padding: 36px 32px;
+}
+
+.media-text {
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.media-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.media-icon-link:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(201,169,110,0.2);
+}
+
+/* ============================================
+   EVENT CARD
+   ============================================ */
+.event-section {
+  padding: 12px 24px 32px;
+}
+
+.event-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+}
+
+.event-icon {
+  margin-bottom: 12px;
+}
+
+.event-date-time {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.event-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.event-addr {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.event-maps {
+  display: flex;
+  gap: 12px;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  background: #fafafa;
+}
+
+.map-link:hover {
+  border-color: var(--gold);
+  transform: scale(1.08);
+}
+
+/* ============================================
+   COUNTDOWN
+   ============================================ */
+.countdown-section {
+  padding: 16px 24px 36px;
+  text-align: center;
+}
+
+.countdown-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.countdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+
+.cd-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 64px;
+}
+
+.cd-digits {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.cd-d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 36px;
+  background: var(--dark);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cd-d::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+}
+
+.cd-sep {
+  width: 56px;
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 4px;
+}
+
+.cd-unit {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.cd-dots {
+  font-size: 22px;
+  color: var(--gold);
+  font-weight: 300;
+  margin-top: 6px;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cd-flip {
+  animation: flipNum 0.4s ease;
+}
+
+@keyframes flipNum {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(-90deg); opacity: 0; }
+  51% { opacity: 1; }
+  100% { transform: rotateX(0deg); }
+}
+
+/* ============================================
+   GUEST FORM
+   ============================================ */
+.form-section {
+  padding: 24px 28px 36px;
+  background: white;
+  margin: 0 0;
+}
+
+.form-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.form-desc {
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid var(--border);
+  background: transparent;
+  padding: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.form-input::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+.form-input:focus {
+  border-bottom-color: var(--gold);
+}
+
+.form-question {
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.radio-label input[type="radio"] {
+  display: none;
+}
+
+.radio-custom {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+  border-color: var(--gold);
+  background: var(--gold);
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--dark);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.submit-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.submit-btn:hover {
+  background: #2a2a2a;
+  letter-spacing: 4px;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   SIGNATURE
+   ============================================ */
+.signature-section {
+  text-align: center;
+  padding: 48px 28px 32px;
+  background: var(--cream);
+}
+
+.signature-pre {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.signature-names {
+  font-family: 'Cormorant Garamond', cursive;
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 24px;
+  animation: shimmerText 4s ease-in-out infinite;
+}
+
+@keyframes shimmerText {
+  0%, 100% { text-shadow: 0 0 0 transparent; }
+  50% { text-shadow: 0 0 20px rgba(201,169,110,0.4); }
+}
+
+.heartline {
+  margin-bottom: 32px;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.06); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.03); }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 28px;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #888;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  transition: all 0.25s ease;
+}
+
+.social-link:hover {
+  color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.social-link svg {
+  transition: transform 0.25s ease;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+}
+
+.site-link-row {
+  margin-top: 16px;
+}
+
+.site-link-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #bbb;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 2px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 10px;
+  color: #ccc;
+  letter-spacing: 1px;
+  border-top: 1px solid var(--border);
+  background: white;
+}
+
+.heart-sm {
+  color: var(--gold);
+  animation: heartbeat 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* ============================================
+   TOAST
+   ============================================ */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--dark);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 400;
+  z-index: 1000;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================
+   DIVIDER LINES
+   ============================================ */
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 24px;
+  opacity: 0.5;
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+@media (max-width: 380px) {
+  .name-script { font-size: 48px; }
+  .cd-d { width: 24px; height: 30px; font-size: 14px; }
+  .cd-block { min-width: 54px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   GOLD DIVIDERS between sections
+   ============================================ */
+.invite-text-section::after,
+.calendar-section::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 16px auto 0;
+}
+.photo-box[style*="background-image"] {
+  animation: none;
+  background-size: cover;
+  background-position: center;
+}
+/* ============================================
+   WISHES TEXTAREA
+   ============================================ */
+.wishes-wrapper {
+  position: relative;
+  margin-top: 4px;
+}
+
+.wishes-label {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.wishes-hint {
+  font-size: 11px;
+  color: var(--text-light);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 90px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: #fdfbf7;
+  padding: 12px 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text);
+  outline: none;
+  resize: vertical;
+  transition: all 0.25s ease;
+}
+
+.form-textarea::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+.form-textarea:focus {
+  border-color: var(--gold);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.12);
+}
+
+.wishes-counter {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  font-size: 10px;
+  color: #bbb;
+  font-style: italic;
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.wishes-counter.warn {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* сердечко-разделитель над полем */
+.wishes-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0 10px;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.wishes-divider::before,
+.wishes-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+  </style>
+
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" style="background-image: url('static/main.png')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+    <h1 class="the-text">Wedding day</h1>
+      <div class="hero-date-big">24.10.2026</div>
+      <div class="hero-names">
+        <span class="name-script">Теңдик</span>
+        <span class="amp">&amp;</span>
+        <span class="name-script">Адинай</span>
+      </div>
+    </div>
+    <div class="scroll-arrow" id="scrollArrow">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M8 12L16 20L24 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="margin-top:-14px">
+        <path d="M8 12L16 20L24 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- AUDIO BUTTON -->
+  <section class="audio-section reveal">
+    <!-- Hidden real audio element -->
+    <audio id="weddingAudio" preload="none">
+      <source src="https://dl.dropboxusercontent.com/scl/fi/pm91cj6u0mun366ed7fax/MOT_-_Svadebnaya_-SkySound.cc.mp3?rlkey=1sh7hvxqs7bu4ky60v3j3l5p8&st=94zexxvq" type="audio/mpeg">
+    </audio>
+    <button class="audio-btn" id="audioBtn" onclick="toggleAudio()">
+      <svg class="audio-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.2"/>
+        <polygon points="10,8 18,12 10,16" fill="currentColor"/>
+      </svg>
+      <svg class="audio-icon-stop" width="18" height="18" viewBox="0 0 24 24" fill="none" style="display:none">
+        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="8" y="8" width="3" height="8" fill="currentColor" rx="1"/>
+        <rect x="13" y="8" width="3" height="8" fill="currentColor" rx="1"/>
+      </svg>
+      <span id="audioBtnText">БАСЫҢЫЗ</span>
+    </button>
+  </section>
+
+  <!-- CALENDAR -->
+  <section class="calendar-section reveal">
+    <h2 class="month-title">Октябрь</h2>
+    <div class="calendar-grid">
+      <div class="cal-header">
+        <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+      </div>
+      <div class="cal-body" id="calendarBody"></div>
+    </div>
+  </section>
+
+  <!-- INVITATION TEXT -->
+  <section class="invite-text-section reveal">
+    <p class="invite-label">Урматту биздин сыйлуу конокторубуз!</p>
+    <div class="invite-text">
+      <p>Сиздерди балдарыбыз <b>Теңдик & Адинайдын</b> үйлонүү тоюна арналган салтанатыбызга келип, кадырлуу коногубуз болуп кетүүго чакырабыз!</p>
+    </div>
+    <p class="invite-sub">💍</p>
+  </section>
+
+  <!-- PHOTO PLACEHOLDER 1 -->
+  <section class="photo-placeholder reveal">
+      <div class="photo-box photo1" style="background-image: url('static/main2.jpg')"></div>
+  </section>
+
+
+  <!-- EVENT INFO -->
+  <section class="event-section reveal">
+    <div class="event-card">
+      <div class="event-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="4" width="18" height="18" rx="2" stroke="#999" stroke-width="1.3"/>
+          <path d="M3 9H21" stroke="#999" stroke-width="1.3"/>
+          <path d="M8 2V4M16 2V4" stroke="#999" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="event-details">
+        <p class="event-date-time">24.10.2026 / 16:00</p>
+        <p class="event-label">Адрес</p>
+        <p class="event-addr">Каракол шаары, "Алтын-Көл" Тойканасы,<br/>​Улица Абдрахманова, 129а</p>
+      </div>
+      <div class="event-maps">
+        <!-- 2GIS -->
+        <a href="https://2gis.kg/karakol/firm/70000001027865578?m=78.389721%2C42.496694%2F16.19&immersive=on" target="_blank" class="map-link" title="2GIS">
+          <svg width="26" height="26" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#00BCD4"/><text x="12" y="16" text-anchor="middle" font-size="9" fill="white" font-family="Arial" font-weight="bold">2GIS</text></svg>
+        </a>
+        <!-- Instagram ресторана -->
+        <a href="https://www.instagram.com/altynkol.karakol" target="_blank" class="map-link" title="Instagram ресторана">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#igGrad)"/>
+            <circle cx="12" cy="12" r="5" stroke="white" stroke-width="1.5"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+            <defs>
+              <linearGradient id="igGrad" x1="0" y1="24" x2="24" y2="0">
+                <stop offset="0%" stop-color="#f09433"/>
+                <stop offset="25%" stop-color="#e6683c"/>
+                <stop offset="50%" stop-color="#dc2743"/>
+                <stop offset="75%" stop-color="#cc2366"/>
+                <stop offset="100%" stop-color="#bc1888"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section reveal">
+    <p class="countdown-label">Жолугушууга чейин:</p>
+    <div class="countdown" id="countdown">
+      <div class="cd-block">
+        <div class="cd-digits"><span class="cd-d" id="days0">0</span><span class="cd-d" id="days1">0</span></div>
+        <div class="cd-sep"></div>
+        <span class="cd-unit">Дней</span>
+      </div>
+      <div class="cd-dots">:</div>
+      <div class="cd-block">
+        <div class="cd-digits"><span class="cd-d" id="hours0">0</span><span class="cd-d" id="hours1">0</span></div>
+        <div class="cd-sep"></div>
+        <span class="cd-unit">Часов</span>
+      </div>
+      <div class="cd-dots">:</div>
+      <div class="cd-block">
+        <div class="cd-digits"><span class="cd-d" id="mins0">0</span><span class="cd-d" id="mins1">0</span></div>
+        <div class="cd-sep"></div>
+        <span class="cd-unit">Минут</span>
+      </div>
+      <div class="cd-dots">:</div>
+      <div class="cd-block">
+        <div class="cd-digits"><span class="cd-d" id="secs0">0</span><span class="cd-d" id="secs1">0</span></div>
+        <div class="cd-sep"></div>
+        <span class="cd-unit">Секунд</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUEST FORM -->
+  <section class="form-section reveal">
+    <h3 class="form-title">Коноктун анкетасын</h3>
+    <p class="form-desc">Сиздерден жооп күтөбүз. Бул күнүбүздү андан дагы шаттуу, кубанычтуу кылуу үчүн биз менен бирге болуңуздар!</p>
+    <div class="form-wrapper">
+      <input type="text" class="form-input" placeholder="Сиздин атыңыз" id="guestName" />
+
+      <p class="form-question">Салтанатка келесизби?</p>
+      <label class="radio-label">
+        <input type="radio" name="attend" value="Ооба, албетте келем!" />
+        <span class="radio-custom"></span>
+        Ооба албетте келем!
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="attend" value="Тилекке каршы келе албаймын" />
+        <span class="radio-custom"></span>
+        Тилекке каршы келе албаймын.
+      </label>
+
+      <!-- ✨ БЛОК ПОЖЕЛАНИЙ ✨ -->
+      <div class="wishes-divider">♥</div>
+
+      <label class="wishes-label" for="wishes">Каалоо-тилек</label>
+      <p class="wishes-hint">Жаштарга жүрөгүңүздөн чыккан жылуу сөздөрүңүздү жазыңыз</p>
+      <div class="wishes-wrapper">
+        <textarea
+          id="wishes"
+          class="form-textarea"
+          maxlength="500"
+          placeholder="Бактылуу болуңуздар, сүйүүңөр түбөлүк болсун..."
+        ></textarea>
+        <span class="wishes-counter" id="wishesCounter">0 / 500</span>
+      </div>
+
+      <button class="submit-btn" id="submitBtn" onclick="handleSubmit(event)">Жооп жиберүү</button>
+    </div>
+  </section>
+
+  <!-- PHOTO PLACEHOLDER 2 -->
+  <section class="photo-placeholder reveal">
+      <div class="photo-box photo1" style="background-image: url('static/main3.jpg')"></div>
+  </section>
+  
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-made">Made with <span class="heart-sm">♥</span> for this special day</div>
+  </footer>
+
+  <!-- PARTICLES -->
+  <div class="particles" id="particles"></div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">Жооп жонотулду! Рахмат 💌</div>
+
+  <script>
+    /* invitation.js — Wedding Invitation Interactive Logic */
+
+// ============================================
+// PARTICLES
+// ============================================
+(function initParticles() {
+  const container = document.getElementById('particles');
+  const colors = ['#c9a96e', '#e8d5a3', '#f5f0e8', '#d4b896', '#fff'];
+  const shapes = ['circle', 'heart', 'petal'];
+
+  function createParticle() {
+    const el = document.createElement('div');
+    el.classList.add('particle');
+
+    const size = Math.random() * 6 + 3;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const left = Math.random() * 100;
+    const duration = Math.random() * 12 + 8;
+    const delay = Math.random() * 10;
+    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+
+    el.style.cssText = `
+      left: ${left}%;
+      width: ${size}px;
+      height: ${size}px;
+      background: ${color};
+      animation-duration: ${duration}s;
+      animation-delay: ${delay}s;
+    `;
+
+    if (shape === 'heart') {
+      el.style.background = 'none';
+      el.style.color = color;
+      el.style.fontSize = `${size * 1.5}px`;
+      el.style.borderRadius = '0';
+      el.textContent = '♥';
+    } else if (shape === 'petal') {
+      el.style.borderRadius = '50% 0 50% 0';
+      el.style.transform = `rotate(${Math.random() * 360}deg)`;
+    }
+
+    container.appendChild(el);
+
+    setTimeout(() => {
+      el.remove();
+      createParticle();
+    }, (duration + delay) * 1000);
+  }
+
+  for (let i = 0; i < 18; i++) {
+    setTimeout(createParticle, i * 400);
+  }
+})();
+
+// ============================================
+// SCROLL REVEAL
+// ============================================
+(function initReveal() {
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  reveals.forEach(el => observer.observe(el));
+})();
+
+// ============================================
+// SCROLL ARROW → smooth scroll
+// ============================================
+document.getElementById('scrollArrow').addEventListener('click', () => {
+  window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+});
+
+// ============================================
+// CALENDAR GENERATION — April 2026
+// ============================================
+(function buildCalendar() {
+  // April 2026: starts on Wednesday (day index 2, Mon=0)
+  const body = document.getElementById('calendarBody');
+  const daysInMonth = 31;
+  const startDay = 3; // Wednesday (Mon=0)
+  const weddingDay = 24;
+  const weekends = []; // Sat=5, Sun=6
+
+  // Empty cells before day 1
+  for (let i = 0; i < startDay; i++) {
+    const empty = document.createElement('div');
+    empty.classList.add('cal-day', 'empty');
+    body.appendChild(empty);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = document.createElement('div');
+    cell.classList.add('cal-day');
+    cell.textContent = String(d).padStart(2, '0');
+
+    const dayOfWeek = (startDay + d - 1) % 7;
+    if (dayOfWeek === 5 || dayOfWeek === 6) {
+      cell.classList.add('weekend');
+    }
+    if (d === weddingDay) {
+      cell.classList.add('wedding');
+      cell.title = 'День свадьбы 💍';
+    }
+
+    body.appendChild(cell);
+  }
+})();
+
+// ============================================
+// COUNTDOWN TIMER
+// ============================================
+(function initCountdown() {
+  const target = new Date('2026-10-24T16:00:00');
+
+  const els = {
+    days0: document.getElementById('days0'),
+    days1: document.getElementById('days1'),
+    hours0: document.getElementById('hours0'),
+    hours1: document.getElementById('hours1'),
+    mins0: document.getElementById('mins0'),
+    mins1: document.getElementById('mins1'),
+    secs0: document.getElementById('secs0'),
+    secs1: document.getElementById('secs1'),
+  };
+
+  let prevValues = {};
+
+  function setDigits(key, val, id0, id1) {
+    const str = String(val).padStart(2, '0');
+    const d0 = str[0], d1 = str[1];
+
+    if (prevValues[id0] !== d0) {
+      flipDigit(els[id0], d0);
+      prevValues[id0] = d0;
+    }
+    if (prevValues[id1] !== d1) {
+      flipDigit(els[id1], d1);
+      prevValues[id1] = d1;
+    }
+  }
+
+  function flipDigit(el, value) {
+    el.classList.remove('cd-flip');
+    void el.offsetWidth; // reflow
+    el.textContent = value;
+    el.classList.add('cd-flip');
+  }
+
+  function update() {
+    const now = new Date();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      setDigits('days', 0, 'days0', 'days1');
+      setDigits('hours', 0, 'hours0', 'hours1');
+      setDigits('mins', 0, 'mins0', 'mins1');
+      setDigits('secs', 0, 'secs0', 'secs1');
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    setDigits('days', days, 'days0', 'days1');
+    setDigits('hours', hours, 'hours0', 'hours1');
+    setDigits('mins', mins, 'mins0', 'mins1');
+    setDigits('secs', secs, 'secs0', 'secs1');
+  }
+
+  update();
+  setInterval(update, 1000);
+})();
+
+// ============================================
+// AUDIO — real playback from Dropbox
+// ============================================
+const weddingAudio = document.getElementById('weddingAudio');
+const audioBtn = document.getElementById('audioBtn');
+
+function toggleAudio() {
+  const iconPlay = audioBtn.querySelector('.audio-icon-play');
+  const iconStop = audioBtn.querySelector('.audio-icon-stop');
+  const btnText = document.getElementById('audioBtnText');
+
+  if (weddingAudio.paused) {
+    weddingAudio.play().then(() => {
+      iconPlay.style.display = 'none';
+      iconStop.style.display = 'inline';
+      btnText.textContent = 'ИГРАЕТ ♪';
+      audioBtn.classList.add('playing');
+    }).catch(() => {
+      // autoplay blocked — show message
+      btnText.textContent = 'БАСЫҢЫЗ';
+    });
+  } else {
+    weddingAudio.pause();
+    iconPlay.style.display = 'inline';
+    iconStop.style.display = 'none';
+    btnText.textContent = 'БАСЫҢЫЗ';
+    audioBtn.classList.remove('playing');
+  }
+}
+
+// Reset button when audio ends
+if (weddingAudio) {
+  weddingAudio.addEventListener('ended', () => {
+    const iconPlay = audioBtn.querySelector('.audio-icon-play');
+    const iconStop = audioBtn.querySelector('.audio-icon-stop');
+    const btnText = document.getElementById('audioBtnText');
+    iconPlay.style.display = 'inline';
+    iconStop.style.display = 'none';
+    btnText.textContent = 'БАСЫҢЫЗ';
+    audioBtn.classList.remove('playing');
+  });
+}
+
+// ============================================
+// FORM SUBMIT
+// ============================================
+async function handleSubmit(e) {
+  e.preventDefault();
+
+  const nameInput = document.querySelector('.form-input');
+  const name = nameInput.value.trim();
+  const attendEl = document.querySelector('input[name="attend"]:checked');
+  const wishesEl = document.getElementById('wishes');
+  const wishes = wishesEl ? wishesEl.value.trim() : '';
+
+  if (!name) {
+    shakeInput();
+    return;
+  }
+
+  const btn = document.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'ЖӨНӨТҮЛҮҮДӨ...';
+
+  try {
+    const res = await fetch('/api/rsvp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        attend: attendEl ? attendEl.value : 'белгиленген жок',
+        wishes: wishes
+      })
+    });
+
+    if (!res.ok) throw new Error('Server error');
+
+    btn.textContent = '✓ Жонотулду';
+    btn.style.background = '#4a7a5a';
+    showToast();
+    launchConfetti();
+
+  } catch (err) {
+    console.error(err);
+    btn.disabled = false;
+    btn.textContent = 'Жооп жиберүү';
+    alert('Ката кетти. Кийинчерээк кайра аракет кылыңыз.');
+  }
+}
+
+function shakeInput() {
+  const input = document.querySelector('.form-input');
+  input.style.borderBottomColor = '#c0392b';
+  input.placeholder = 'Сураныч, атыңызды жазыңыз';
+  input.animate([
+    { transform: 'translateX(-6px)' },
+    { transform: 'translateX(6px)' },
+    { transform: 'translateX(-4px)' },
+    { transform: 'translateX(4px)' },
+    { transform: 'translateX(0)' }
+  ], { duration: 400, easing: 'ease-out' });
+
+  setTimeout(() => {
+    input.style.borderBottomColor = '';
+    input.placeholder = 'Сиздин атыңыз';
+  }, 2000);
+}
+
+function showToast() {
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+// ============================================
+// CONFETTI on submit
+// ============================================
+function launchConfetti() {
+  const container = document.getElementById('particles');
+  const emojis = ['💍', '🌸', '💕', '✨', '🌹', '💛', '🎊'];
+  for (let i = 0; i < 24; i++) {
+    const el = document.createElement('div');
+    el.style.cssText = `
+      position: fixed;
+      left: ${Math.random() * 100}vw;
+      top: -40px;
+      font-size: ${Math.random() * 16 + 14}px;
+      z-index: 999;
+      pointer-events: none;
+      animation: confettiFall ${Math.random() * 2 + 1.5}s ease-in forwards;
+      animation-delay: ${Math.random() * 0.8}s;
+    `;
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 4000);
+  }
+}
+
+// Add confetti keyframe
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes confettiFall {
+    to {
+      transform: translateY(110vh) rotate(${Math.random() * 720}deg);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// ============================================
+// HERO parallax on scroll (subtle)
+// ============================================
+window.addEventListener('scroll', () => {
+  const hero = document.getElementById('hero');
+  const heroBg = hero.querySelector('.hero-bg');
+  const scrollY = window.scrollY;
+  if (scrollY < window.innerHeight) {
+    if (heroBg) {
+      heroBg.style.transform = `scale(1.05) translateY(${scrollY * 0.2}px)`;
+    }
+    hero.style.opacity = 1 - (scrollY / window.innerHeight) * 0.6;
+  }
+}, { passive: true });
+
+// ============================================
+// TOUCH RIPPLE on buttons
+// ============================================
+document.querySelectorAll('.submit-btn, .audio-btn').forEach(btn => {
+  btn.addEventListener('touchstart', function(e) {
+    const rect = this.getBoundingClientRect();
+    const touch = e.touches[0];
+    const ripple = document.createElement('span');
+    ripple.style.cssText = `
+      position: absolute;
+      width: 60px; height: 60px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      transform: scale(0);
+      left: ${touch.clientX - rect.left - 30}px;
+      top: ${touch.clientY - rect.top - 30}px;
+      animation: rippleAnim 0.6s ease-out forwards;
+      pointer-events: none;
+    `;
+    this.style.overflow = 'hidden';
+    this.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 700);
+  }, { passive: true });
+});
+
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = `@keyframes rippleAnim { to { transform: scale(4); opacity: 0; } }`;
+document.head.appendChild(rippleStyle);
+
+// ============================================
+// WISHES COUNTER
+// ============================================
+(function initWishesCounter() {
+  const textarea = document.getElementById('wishes');
+  const counter = document.getElementById('wishesCounter');
+  if (!textarea || !counter) return;
+
+  const max = 500;
+
+  textarea.addEventListener('input', () => {
+    const len = textarea.value.length;
+    counter.textContent = `${len} / ${max}`;
+    if (len > max * 0.85) {
+      counter.classList.add('warn');
+    } else {
+      counter.classList.remove('warn');
+    }
+  });
+})();
+  </script>
+</body>
+</html>

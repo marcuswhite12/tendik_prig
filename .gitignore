@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+env3.*
+ENV/
+.venv/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# FastAPI / Uvicorn
+*.log
+log.txt
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# Type checking / linting
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# Databases (dev/local)
+*.db
+*.sqlite3
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Docker (если генерируются локально)
+docker-compose.override.yml
+
+# IDE
+.vscode/
+.idea/
+
+.idea
+idea
+
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc project-specific
+archive.zip
+*.zip
+.cache/
+.netlify/
+.codspeed/
