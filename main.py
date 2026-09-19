@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 
 SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
-SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+SMTP_PORT = int(os.getenv("SMTP_PORT", "465"))
 SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 EMAIL_TO = os.getenv("EMAIL_TO", SMTP_USER)
@@ -92,7 +92,8 @@ async def rsvp(payload: RSVP):
             port=SMTP_PORT,
             username=SMTP_USER,
             password=SMTP_PASSWORD,
-            start_tls=True,   # для 587. Для 465 → use_tls=True, start_tls=False
+            use_tls=True,
+            start_tls=False,   # для 587. Для 465 → use_tls=True, start_tls=False
         )
     except Exception as e:
         print("SMTP error:", e)
