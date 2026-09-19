@@ -92,8 +92,7 @@ async def rsvp(payload: RSVP):
             port=SMTP_PORT,
             username=SMTP_USER,
             password=SMTP_PASSWORD,
-            use_tls=True,
-            start_tls=False,   # для 587. Для 465 → use_tls=True, start_tls=False
+            start_tls=True,   # для 587. Для 465 → use_tls=True, start_tls=False
         )
     except Exception as e:
         print("SMTP error:", e)
