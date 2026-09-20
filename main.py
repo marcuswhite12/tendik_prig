@@ -18,7 +18,7 @@ SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "465"))
 SMTP_USER = os.getenv("SMTP_USER")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
-EMAIL_TO = os.getenv("EMAIL_TO", SMTP_USER)
+EMAIL_TO = [e.strip() for e in os.getenv("EMAIL_TO", SMTP_USER or "").split(",") if e.strip()]
 
 
 class RSVP(BaseModel):
@@ -80,7 +80,7 @@ async def rsvp(payload: RSVP):
 
     msg = EmailMessage()
     msg["From"] = SMTP_USER
-    msg["To"] = EMAIL_TO
+    msg["To"] = ", ".join(EMAIL_TO)
     msg["Subject"] = f"💌 RSVP: {payload.name}"
     msg.set_content(plain)
     msg.add_alternative(html, subtype="html")
