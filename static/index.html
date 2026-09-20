@@ -10,6 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 
 <style>
+/* ============================================
+   INVITATION.CSS — Wedding Invitation Styles
+   Теңдик & Адинай
+   (тёмная тема + увеличенный текст для телефонов)
+   ============================================ */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -17,15 +23,19 @@
 }
 
 :root {
-  --cream: #f5f0e8;
-  --dark: #1a1a1a;
+  color-scheme: dark;
+  --cream: #4a4d3f;        /* фон страницы */
+  --surface: #565a4a;      /* карточки, форма, футер */
+  --surface-2: #616554;    /* поля ввода, кнопки-карты */
+  --dark: #f7f2ea;         /* заголовки (светлые на тёмном) */
   --gold: #c9a96e;
   --gold-light: #e8d5a3;
-  --text: #3a3a3a;
-  --text-light: #6b6b6b;
-  --border: #e0d5c5;
+  --gold-text: #d9bc86;    /* золотой для мелкого текста */
+  --text: #ebe5da;
+  --text-light: #b8afa0;
+  --border: #7a7e69;
   --white: #fff;
-  --shadow: rgba(0,0,0,0.08);
+  --shadow: rgba(0,0,0,0.45);
 }
 
 html {
@@ -103,7 +113,7 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.55) 100%);
+    linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.40) 40%, rgba(0,0,0,0.70) 100%);
   z-index: 1;
 }
 
@@ -261,7 +271,7 @@ section {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 3px;
-  color: #7a7a7a;
+  color: #d3cab9;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -363,10 +373,12 @@ section {
   color: transparent;
 }
 
-.cal-day.wedding {
-  background: #1a1a1a;
-  color: white;
-  font-weight: 500;
+.cal-day.wedding,
+.cal-day.weekend.wedding {
+  background: #8a6d3b;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px var(--gold-light);
 }
 
 .cal-day.wedding::after {
@@ -375,11 +387,11 @@ section {
   bottom: 2px;
   right: 3px;
   font-size: 8px;
-  color: var(--gold);
+  color: #fff;
 }
 
 .cal-day.weekend {
-  color: #b5814f;
+  color: #e0ae7c;
 }
 
 /* ============================================
@@ -387,7 +399,7 @@ section {
    ============================================ */
 .invite-text-section {
   text-align: center;
-  padding: 38px 38px;
+  padding: 32px 32px;
 }
 
 .invite-label {
@@ -501,7 +513,7 @@ section {
   border-radius: 50%;
   text-decoration: none;
   transition: all 0.3s ease;
-  background: white;
+  background: var(--surface);
   box-shadow: 0 2px 12px var(--shadow);
 }
 
@@ -519,7 +531,7 @@ section {
 }
 
 .event-card {
-  background: white;
+  background: var(--surface);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 4px 20px var(--shadow);
@@ -553,7 +565,7 @@ section {
 .event-label {
   font-size: 12px;
   letter-spacing: 2px;
-  color: #a98a50;
+  color: #d9bc86;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -581,7 +593,7 @@ section {
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.25s ease;
-  background: #fafafa;
+  background: var(--surface-2);
 }
 
 .map-link:hover {
@@ -631,8 +643,9 @@ section {
   justify-content: center;
   width: 30px;
   height: 40px;
-  background: var(--dark);
-  color: white;
+  background: #2b251d;
+  border: 1px solid var(--border);
+  color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -695,7 +708,7 @@ section {
    ============================================ */
 .form-section {
   padding: 24px 28px 36px;
-  background: white;
+  background: var(--surface);
   margin: 0 0;
 }
 
@@ -739,7 +752,7 @@ section {
 }
 
 .form-input::placeholder {
-  color: #aaa;
+  color: #8f8678;
   font-style: italic;
 }
 
@@ -774,7 +787,7 @@ section {
   height: 22px;
   min-width: 22px;
   border-radius: 50%;
-  border: 1.5px solid #ccc;
+  border: 1.5px solid #7a705f;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -799,8 +812,8 @@ section {
 .submit-btn {
   width: 100%;
   padding: 16px;
-  background: var(--dark);
-  color: white;
+  background: #8a6d3b;
+  color: #fff;
   border: none;
   border-radius: 4px;
   font-family: 'Montserrat', sans-serif;
@@ -829,7 +842,7 @@ section {
 }
 
 .submit-btn:hover {
-  background: #2a2a2a;
+  background: #9c7c43;
   letter-spacing: 4px;
 }
 
@@ -893,7 +906,7 @@ section {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: #7a7a7a;
+  color: #b8afa0;
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: 400;
@@ -921,7 +934,7 @@ section {
   font-size: 12px;
   letter-spacing: 1.5px;
   color: #999;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 2px;
 }
 
@@ -932,10 +945,10 @@ section {
   text-align: center;
   padding: 20px;
   font-size: 12px;
-  color: #999;
+  color: #a59c8d;
   letter-spacing: 1px;
   border-top: 1px solid var(--border);
-  background: white;
+  background: var(--surface);
 }
 
 .heart-sm {
@@ -952,8 +965,9 @@ section {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%) translateY(80px);
-  background: var(--dark);
-  color: white;
+  background: #2b251d;
+  border: 1px solid var(--gold);
+  color: #fff;
   padding: 14px 28px;
   border-radius: 30px;
   font-size: 15px;
@@ -1029,7 +1043,7 @@ section {
   min-height: 110px;
   border: 1.5px solid var(--border);
   border-radius: 12px;
-  background: #fdfbf7;
+  background: var(--surface-2);
   padding: 12px 14px 26px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
@@ -1042,13 +1056,13 @@ section {
 }
 
 .form-textarea::placeholder {
-  color: #aaa;
+  color: #8f8678;
   font-style: italic;
 }
 
 .form-textarea:focus {
   border-color: var(--gold);
-  background: #fff;
+  background: #2b251d;
   box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.12);
 }
 
@@ -1064,7 +1078,7 @@ section {
 }
 
 .wishes-counter.warn {
-  color: #a98a50;
+  color: #d9bc86;
   font-weight: 500;
 }
 
@@ -1137,7 +1151,7 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 28px;
-  color: #a98a50;
+  color: #d9bc86;
   margin-bottom: 20px;
 }
 
@@ -1155,7 +1169,7 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 28px;
-  color: #a98a50;
+  color: #d9bc86;
   margin: 2px 0;
 }
 
@@ -1247,7 +1261,7 @@ section {
   <section class="invite-text-section reveal">
     <p class="invite-label">Урматту биздин сыйлуу конокторубуз!</p>
     <div class="invite-text">
-      <p>Сиздерди балдарыбыз <b>Теңдик & Адинайдын</b> үйлонүү тоюна арналган салтанатыбызга келип, кадырлуу коногубуз болуп кетүүго чакырабыз!</p>
+      <p>Сиздерди балдарыбыз <b>Теңдик & Адинайдын</b> үйлөнүү тоюна арналган салтанатыбызга келип, кадырлуу коногубуз болуп кетүүгө чакырабыз!</p>
     </div>
     <p class="invite-sub">💍</p>
   </section>
@@ -1270,8 +1284,8 @@ section {
       </div>
       <div class="event-details">
         <p class="event-date-time">24.10.2026 / 16:00</p>
-        <p class="event-label">Адрес</p>
-        <p class="event-addr">Каракол шаары, "Алтын-Көл" Тойканасы,<br/>​Улица Абдрахманова, 129а</p>
+        <p class="event-label">Дареги</p>
+        <p class="event-addr">Каракол шаары, "Алтын-Көл" Тойканасы,<br/>​Ж.Абдрахманова көч. 129а</p>
       </div>
       <div class="event-maps">
         <!-- 2GIS -->
@@ -1375,10 +1389,10 @@ section {
     <!-- ТОЙ ЭЭЛЕРИ -->
 <section class="hosts-section reveal">
   <div class="hosts-ornament"><span class="hosts-heart">♥</span></div>
-  <p class="hosts-pre">Урматтоо менен</p>
+  <p class="hosts-pre">Сиздерди терең урматтоо менен</p>
   <p class="hosts-role">той ээлери</p>
   <span class="hosts-name">Эдил</span>
-  <span class="hosts-and">менен</span>
+  <span class="hosts-and">&</span>
   <span class="hosts-name">Назира</span>
 </section>
   
