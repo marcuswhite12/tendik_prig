@@ -9,12 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 
-  <style>
-    /* ============================================
-   INVITATION.CSS — Wedding Invitation Styles
-   Теңдик & Адинай
-   ============================================ */
-
+<style>
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -27,7 +22,7 @@
   --gold: #c9a96e;
   --gold-light: #e8d5a3;
   --text: #3a3a3a;
-  --text-light: #777;
+  --text-light: #6b6b6b;
   --border: #e0d5c5;
   --white: #fff;
   --shadow: rgba(0,0,0,0.08);
@@ -143,7 +138,7 @@ body {
 
 .save-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 4px;
   color: rgba(255,255,255,0.9);
@@ -152,13 +147,13 @@ body {
 .the-text {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 13px;
+  font-size: 20px;
   color: var(--gold-light);
 }
 
 .date-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 4px;
   color: rgba(255,255,255,0.9);
@@ -166,10 +161,10 @@ body {
 
 .hero-date-big {
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 300;
   letter-spacing: 3px;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.9);
   margin-bottom: 28px;
   animation: heroFadeIn 2s 0.3s both;
 }
@@ -184,7 +179,7 @@ body {
 
 .name-script {
   font-family: 'Cormorant Garamond', cursive;
-  font-size: 62px;
+  font-size: 64px;
   font-weight: 400;
   color: white;
   line-height: 1.1;
@@ -194,7 +189,7 @@ body {
 .amp {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 300;
   color: var(--gold-light);
   display: block;
@@ -261,12 +256,12 @@ section {
   background: transparent;
   border: 1.5px solid #c0b090;
   border-radius: 30px;
-  padding: 10px 24px;
+  padding: 12px 26px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 3px;
-  color: #888;
+  color: #7a7a7a;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -313,7 +308,7 @@ section {
 
 .month-title {
   font-family: 'Great Vibes', cursive;
-  font-size: 52px;
+  font-size: 56px;
   font-weight: 400;
   color: var(--dark);
   margin-bottom: 20px;
@@ -326,7 +321,7 @@ section {
 }
 
 .calendar-grid {
-  max-width: 320px;
+  max-width: 340px;
   margin: 0 auto;
 }
 
@@ -337,7 +332,7 @@ section {
 }
 
 .cal-header span {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-light);
   text-align: center;
@@ -356,7 +351,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 300;
   color: var(--text);
   border-radius: 50%;
@@ -377,14 +372,14 @@ section {
 .cal-day.wedding::after {
   content: '♥';
   position: absolute;
-  bottom: 1px;
-  right: 1px;
-  font-size: 6px;
+  bottom: 2px;
+  right: 3px;
+  font-size: 8px;
   color: var(--gold);
 }
 
 .cal-day.weekend {
-  color: #c0956a;
+  color: #b5814f;
 }
 
 /* ============================================
@@ -392,15 +387,16 @@ section {
    ============================================ */
 .invite-text-section {
   text-align: center;
-  padding: 32px 32px;
+  padding: 38px 38px;
 }
 
 .invite-label {
   font-family: 'Great Vibes', cursive;
-  font-size: 34px;
+  font-size: 40px;
   font-weight: 400;
+  line-height: 1.2;
   color: var(--dark);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   position: relative;
   display: inline-block;
 }
@@ -418,15 +414,15 @@ section {
 }
 
 .invite-text p {
-  font-size: 13px;
-  line-height: 1.85;
+  font-size: 16px;
+  line-height: 1.8;
   color: var(--text);
   font-weight: 300;
   margin-bottom: 12px;
 }
 
 .invite-sub {
-  font-size: 13px;
+  font-size: 18px;
   color: var(--text-light);
   margin-top: 16px;
   font-style: italic;
@@ -461,7 +457,6 @@ section {
   50% { background-position: 100% 50%; }
 }
 
-
 .photo-shimmer {
   position: absolute;
   inset: 0;
@@ -489,7 +484,7 @@ section {
 }
 
 .media-text {
-  font-size: 12.5px;
+  font-size: 15px;
   line-height: 1.8;
   color: var(--text-light);
   margin-bottom: 24px;
@@ -548,24 +543,24 @@ section {
 }
 
 .event-date-time {
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 500;
   color: var(--dark);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   letter-spacing: 0.5px;
 }
 
 .event-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 2px;
-  color: var(--gold);
+  color: #a98a50;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 
 .event-addr {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
   color: var(--text);
   font-weight: 300;
   margin-bottom: 16px;
@@ -580,8 +575,8 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border: 1px solid var(--border);
   border-radius: 10px;
   text-decoration: none;
@@ -603,7 +598,7 @@ section {
 }
 
 .countdown-label {
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 2px;
   color: var(--text-light);
   text-transform: uppercase;
@@ -621,7 +616,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 64px;
+  min-width: 62px;
 }
 
 .cd-digits {
@@ -634,12 +629,12 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 36px;
+  width: 30px;
+  height: 40px;
   background: var(--dark);
   color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   border-radius: 5px;
   position: relative;
@@ -665,14 +660,14 @@ section {
 }
 
 .cd-unit {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   color: var(--text-light);
   text-transform: uppercase;
 }
 
 .cd-dots {
-  font-size: 22px;
+  font-size: 24px;
   color: var(--gold);
   font-weight: 300;
   margin-top: 6px;
@@ -706,16 +701,17 @@ section {
 
 .form-title {
   font-family: 'Great Vibes', cursive;
-  font-size: 38px;
+  font-size: 44px;
   font-weight: 400;
+  line-height: 1.2;
   color: var(--dark);
   margin-bottom: 14px;
   text-align: center;
 }
 
 .form-desc {
-  font-size: 12px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.7;
   color: var(--text-light);
   text-align: center;
   margin-bottom: 28px;
@@ -725,7 +721,7 @@ section {
 .form-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .form-input {
@@ -733,9 +729,9 @@ section {
   border: none;
   border-bottom: 1.5px solid var(--border);
   background: transparent;
-  padding: 10px 0;
+  padding: 12px 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 300;
   color: var(--text);
   outline: none;
@@ -743,7 +739,7 @@ section {
 }
 
 .form-input::placeholder {
-  color: #bbb;
+  color: #aaa;
   font-style: italic;
 }
 
@@ -752,7 +748,7 @@ section {
 }
 
 .form-question {
-  font-size: 12px;
+  font-size: 15px;
   color: var(--text);
   font-weight: 400;
   letter-spacing: 0.3px;
@@ -762,7 +758,7 @@ section {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 12.5px;
+  font-size: 15px;
   font-weight: 300;
   color: var(--text);
   cursor: pointer;
@@ -774,9 +770,9 @@ section {
 }
 
 .radio-custom {
-  width: 18px;
-  height: 18px;
-  min-width: 18px;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
   border-radius: 50%;
   border: 1.5px solid #ccc;
   display: flex;
@@ -793,8 +789,8 @@ section {
 
 .radio-label input[type="radio"]:checked + .radio-custom::after {
   content: '';
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   background: white;
   border-radius: 50%;
   position: absolute;
@@ -802,13 +798,13 @@ section {
 
 .submit-btn {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   background: var(--dark);
   color: white;
   border: none;
   border-radius: 4px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -851,7 +847,7 @@ section {
 }
 
 .signature-pre {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 1.5px;
   color: var(--text-light);
   margin-bottom: 8px;
@@ -860,7 +856,7 @@ section {
 
 .signature-names {
   font-family: 'Cormorant Garamond', cursive;
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 400;
   color: var(--dark);
   margin-bottom: 24px;
@@ -897,8 +893,8 @@ section {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: #888;
-  font-size: 10px;
+  color: #7a7a7a;
+  font-size: 12px;
   letter-spacing: 1px;
   font-weight: 400;
   transition: all 0.25s ease;
@@ -922,9 +918,9 @@ section {
 }
 
 .site-link-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.5px;
-  color: #bbb;
+  color: #999;
   border-bottom: 1px solid #ddd;
   padding-bottom: 2px;
 }
@@ -935,8 +931,8 @@ section {
 .footer {
   text-align: center;
   padding: 20px;
-  font-size: 10px;
-  color: #ccc;
+  font-size: 12px;
+  color: #999;
   letter-spacing: 1px;
   border-top: 1px solid var(--border);
   background: white;
@@ -960,7 +956,7 @@ section {
   color: white;
   padding: 14px 28px;
   border-radius: 30px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   z-index: 1000;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -983,22 +979,6 @@ section {
 }
 
 /* ============================================
-   MEDIA QUERIES
-   ============================================ */
-@media (max-width: 380px) {
-  .name-script { font-size: 48px; }
-  .cd-d { width: 24px; height: 30px; font-size: 14px; }
-  .cd-block { min-width: 54px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ============================================
    GOLD DIVIDERS between sections
    ============================================ */
 .invite-text-section::after,
@@ -1010,11 +990,13 @@ section {
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
   margin: 16px auto 0;
 }
+
 .photo-box[style*="background-image"] {
   animation: none;
   background-size: cover;
   background-position: center;
 }
+
 /* ============================================
    WISHES TEXTAREA
    ============================================ */
@@ -1026,7 +1008,7 @@ section {
 .wishes-label {
   display: block;
   font-family: 'Great Vibes', cursive;
-  font-size: 26px;
+  font-size: 32px;
   color: var(--dark);
   text-align: center;
   margin-bottom: 8px;
@@ -1034,7 +1016,8 @@ section {
 }
 
 .wishes-hint {
-  font-size: 11px;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--text-light);
   text-align: center;
   font-style: italic;
@@ -1043,13 +1026,13 @@ section {
 
 .form-textarea {
   width: 100%;
-  min-height: 90px;
+  min-height: 110px;
   border: 1.5px solid var(--border);
   border-radius: 12px;
   background: #fdfbf7;
-  padding: 12px 14px;
+  padding: 12px 14px 26px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
+  font-size: 18px;
   font-style: italic;
   line-height: 1.5;
   color: var(--text);
@@ -1059,7 +1042,7 @@ section {
 }
 
 .form-textarea::placeholder {
-  color: #bbb;
+  color: #aaa;
   font-style: italic;
 }
 
@@ -1073,15 +1056,15 @@ section {
   position: absolute;
   right: 12px;
   bottom: 8px;
-  font-size: 10px;
-  color: #bbb;
+  font-size: 12px;
+  color: #999;
   font-style: italic;
   pointer-events: none;
   transition: color 0.25s ease;
 }
 
 .wishes-counter.warn {
-  color: var(--gold);
+  color: #a98a50;
   font-weight: 500;
 }
 
@@ -1093,7 +1076,7 @@ section {
   gap: 10px;
   margin: 18px 0 10px;
   color: var(--gold);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .wishes-divider::before,
@@ -1103,7 +1086,105 @@ section {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
-  </style>
+
+/* ============================================
+   ТОЙ ЭЭЛЕРИ (подпись в конце)
+   ============================================ */
+.hosts-section {
+  text-align: center;
+  padding: 56px 24px 48px;
+  background: var(--cream);
+}
+
+.hosts-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--gold);
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.hosts-ornament::before,
+.hosts-ornament::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.hosts-ornament::after {
+  background: linear-gradient(270deg, transparent, var(--gold));
+}
+
+.hosts-heart {
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.hosts-pre {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+
+.hosts-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: #a98a50;
+  margin-bottom: 20px;
+}
+
+.hosts-name {
+  display: block;
+  font-family: 'Great Vibes', 'Cormorant Garamond', cursive;
+  font-size: 72px;
+  line-height: 1.05;
+  color: var(--dark);
+  animation: hostsGlow 4s ease-in-out infinite;
+}
+
+.hosts-and {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: #a98a50;
+  margin: 2px 0;
+}
+
+@keyframes hostsGlow {
+  0%, 100% { text-shadow: 0 2px 18px rgba(201,169,110,0.25); }
+  50%      { text-shadow: 0 2px 26px rgba(201,169,110,0.60); }
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+@media (max-width: 380px) {
+  .name-script   { font-size: 52px; }
+  .invite-label  { font-size: 34px; }
+  .form-title    { font-size: 38px; }
+  .hosts-name    { font-size: 58px; }
+  .cd-block      { min-width: 54px; }
+  .cd-d          { width: 26px; height: 34px; font-size: 16px; }
+  .cd-sep        { width: 50px; }
+  .cd-unit       { font-size: 10px; letter-spacing: 1px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
 
 </head>
 <body>
@@ -1290,6 +1371,16 @@ section {
   <section class="photo-placeholder reveal">
       <div class="photo-box photo1" style="background-image: url('static/main3.jpg')"></div>
   </section>
+
+    <!-- ТОЙ ЭЭЛЕРИ -->
+<section class="hosts-section reveal">
+  <div class="hosts-ornament"><span class="hosts-heart">♥</span></div>
+  <p class="hosts-pre">Урматтоо менен</p>
+  <p class="hosts-role">той ээлери</p>
+  <span class="hosts-name">Назира</span>
+  <span class="hosts-and">менен</span>
+  <span class="hosts-name">Эрнис</span>
+</section>
   
 
   <!-- FOOTER -->
